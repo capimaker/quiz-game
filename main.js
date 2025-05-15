@@ -3,9 +3,10 @@ const startBtn = document.getElementById('startBtn');
 const startScreen = document.getElementById('start-screen');
 const quizContainer = document.getElementById('quiz-container');
 
+
 startBtn.addEventListener('click', () => {
-  startScreen.style.display = 'none';         // Ocultamos el botón de inicio
-  quizContainer.style.display = 'block';      // Mostramos el quiz
+  startScreen.classList.add('hidden');         // Ocultamos el botón de inicio
+  quizContainer.classList.remove('hidden');      // Mostramos el quiz
   showQuestion();                              // Empezamos el quiz
 });
 
@@ -74,8 +75,32 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 function showFinalScore() {
   document.getElementById('question').innerHTML = `Quiz Finished!<br>Your Score: ${score}/10`;
   document.getElementById('answers').innerHTML = '';
-  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('nextBtn').style.display ='none';
+  document.getElementById('restartBtn').classList.remove('hidden');
 }
+
+
+document.getElementById("restartBtn").addEventListener('click',() =>{
+currentQuestionIndex = 0;
+score = 0;
+
+document.getElementById("restartBtn").classList.add('hidden');
+
+restartBtn.addEventListener('click', () => {
+  startScreen.classList.add('hidden');         // Ocultamos el botón de inicio
+  quizContainer.classList.remove('hidden');      // Mostramos el quiz
+  showQuestion();                              // Empezamos el quiz
+});
+
+ axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
+    .then(response => {
+      questions = response.data.results;
+      showQuestion();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
 
 /* Esta función corrige caracteres especiales de los HTML entities
  La API devuelve cosas como "What is &quot;HTML&quot;" en vez de "What is "HTML"".
