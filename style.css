@@ -1,8 +1,6 @@
-.btn btn-info{
-  display: none;
-}
 
-.hide{
+
+.hidden{
     display: none;
 }
 
@@ -10,6 +8,6 @@
   background-color: rgb(0, 255, 72);
 }
 
-.wrong {
+.incorrect {
   background-color: rgb(255, 0, 0);
 }
