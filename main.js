@@ -1,54 +1,22 @@
 
-
-/*const startButton = document.getElementById("start-btn");
-const nextButton = document.getElementById("next-btn");
-const questionContainer = document.getElementById("quiz-container");
-const questionElement = document.getElementById("question");
-const answerButtonElement = document.getElementById("answer-buttons");
-
-
-
- const API_URL ="https://opentdb.com/api.php?amount=10&category=9&type=multiple";
-console.log(API_URL);
-
-const quiz = async (e) =>{
-e.preventDedault();
-try{
-  const quizz = quest.value;
-  const res = await axios.get(API_URL)
-  console.log(res)
-  const quizzy = res.data.results;
-    showQuiz(quizzy);
-}catch(error){
-console.log(error);
-}
-};
-
-const showQuiz = (questions) => {
-  questionContainer.innerHTML = "";
-  quizzy.forEach((questions) => {
-    questionContainer.innerHTML += `
-    `;
-  });
-};
-
-startButton.addEventListener("submit" quiz);
-//console.log((Response.data));
-*/
-
+/* vamos a empezar creando variables donde en la primera guardaremos las 10 preguntas
+en la segunda variable le diremos que empezamos desde la posición 0
+y en la tercera nos va a llevar la cuenta de los aciertos o errores*/
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
+/* aquí llamamos a la API y le decimos que then si la respuesta es correcta response.data.results es donde estan las preguntas
+y las guarda en question. luego llamaremos a showQuestion para mostrar la primera pregunta. si hay un error pasaremos al catch*/ 
 axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
   .then(response => {
     questions = response.data.results;
-    showQuestion();
+     showQuestion();
   })
   .catch(error => {
-    console.error("Error al cargar las preguntas:", error);
+    console.error(error);
   });
-
+/*obtenemos la pregunta actual, por ejemplo, la pregunta 1 si currentQuestionIndex es 0.*/ 
 function showQuestion() {
   const question = questions[currentQuestionIndex];
   const answers = [...question.incorrect_answers];
@@ -70,9 +38,9 @@ function checkAnswer(button, correct) {
   const buttons = document.querySelectorAll('#answers button');
   buttons.forEach(btn => {
     btn.disabled = true;
-    if (btn.innerHTML === correct) {
-      btn.classList.add('correct');
-      if (btn === button) score++;
+      if (btn.innerHTML === correct) {
+        btn.classList.add('correct');
+        if (btn === button) score++;
     } else {
       btn.classList.add('incorrect');
     }
@@ -91,7 +59,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 });
 
 function showFinalScore() {
-  document.getElementById('question').innerHTML = `¡Quiz terminado!<br>Tu puntuación: ${score}/10`;
+  document.getElementById('question').innerHTML = `Quiz Finished!<br>Your Score: ${score}/10`;
   document.getElementById('answers').innerHTML = '';
   document.getElementById('nextBtn').style.display = 'none';
 }
