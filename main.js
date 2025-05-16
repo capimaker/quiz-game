@@ -48,19 +48,24 @@ function showQuestion() {
   });
 }
 
-function checkAnswer(button, correct) {
+function checkAnswer(button, correctAnswer) {
   const buttons = document.querySelectorAll('#answers button');
+  
   buttons.forEach(btn => {
     btn.disabled = true;
-      if (btn.innerHTML === correct) { //Compara el texto del botón con la respuesta correcta y i es igual, le añade una clase CSS llamada correct
-        btn.classList.add('correct');
-        if (btn === button) score++; // Si el botón que se ha pulsado era el correcto, sube el marcador
+    const btnText = decodeHTMLEntities(btn.innerHTML); // ← esto es clave
+
+    if (btnText === correctAnswer) {
+      btn.classList.add('correct');
+      if (btn === button) score++;
     } else {
-      btn.classList.add('incorrect'); // sino es correcto se le pone la clase incorrect que desde css lo hemos puesto en rojo
+      btn.classList.add('incorrect');
     }
   });
+
   document.getElementById('nextBtn').style.display = 'block';
 }
+
 
 document.getElementById('nextBtn').addEventListener('click', () => {
   currentQuestionIndex++;
