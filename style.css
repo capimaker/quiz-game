@@ -16,26 +16,26 @@ body {
   
 }
 
-
+h1{
+  align-items: center;
+}
 
 
 /* Header superior */
-header {
-  background-color: #0b7ec2;
-  color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-header h1 {
-  display: flex;
-  align-self: start;
-  margin: 0;
+#start-screen{
+   background-color: white;
+  width: 600px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
 
-/* Contenedor del quiz */
-.quiz-box {
+
+
+
+#quiz-container {
   background-color: white;
   width: 600px;
   padding: 2rem;
@@ -46,14 +46,14 @@ header h1 {
 
 
 
-/* Pregunta */
+
 #question {
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
 
-/* Botones de respuesta */
+
 #answers button {
   padding: 1rem;
   font-size: 1rem;
@@ -74,13 +74,9 @@ header h1 {
 #answers button:nth-child(3) { background-color: #86dd92; } 
 #answers button:nth-child(4) { background-color: #3498db; } 
 
-/* Botón siguiente */
+
 #nextBtn {
-  background-color: #0b7ec2;
-  color: white;
-  border: none;
   padding: 20px;
-  border-radius: 6px;
   cursor: pointer;
   float: right;
 }
