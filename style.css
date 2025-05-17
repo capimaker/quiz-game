@@ -68,10 +68,10 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* Colores de botones random */
+
 #answers button:nth-child(1) { background-color: #e74c3c; } 
 #answers button:nth-child(2) { background-color: #f1c40f; } 
-#answers button:nth-child(3) { background-color: #aa2ecc; } 
+#answers button:nth-child(3) { background-color: #86dd92; } 
 #answers button:nth-child(4) { background-color: #3498db; } 
 
 /* Botón siguiente */
@@ -91,7 +91,7 @@ header h1 {
   margin-bottom: 2rem;           /* espacio debajo de las respuestas */
 }
 
-.hidden{
+.hide{
     display: none;
 }
 

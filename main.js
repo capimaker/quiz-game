@@ -81,7 +81,7 @@ function showFinalScore() {
   document.getElementById('question').innerHTML = `Quiz Finished!<br>Your Score: ${score}/10`;
   document.getElementById('answers').innerHTML = '';
   document.getElementById('nextBtn').style.display ='none';
-  document.getElementById('restartBtn').classList.remove('hidden');
+  document.getElementById('restartBtn').classList.remove('hide');
 }
 
 
@@ -89,11 +89,11 @@ document.getElementById("restartBtn").addEventListener('click',() =>{
 currentQuestionIndex = 0;
 score = 0;
 
-document.getElementById("restartBtn").classList.add('hidden');
+document.getElementById("restartBtn").classList.add('hide');
 
 restartBtn.addEventListener('click', () => {
-  startScreen.classList.add('hidden');         // Ocultamos el botón de inicio
-  quizContainer.classList.remove('hidden');      // Mostramos el quiz
+  startScreen.classList.add('hide');         // Ocultamos el botón de inicio
+  quizContainer.classList.remove('hide');      // Mostramos el quiz
   showQuestion();                              // Empezamos el quiz
 });
 
