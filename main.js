@@ -5,8 +5,8 @@ const quizContainer = document.getElementById('quiz-container');
 
 
 startBtn.addEventListener('click', () => {
-  startScreen.classList.add('hidden');         // Ocultamos el botón de inicio
-  quizContainer.classList.remove('hidden');      // Mostramos el quiz
+  startScreen.classList.add('hidd');         // Ocultamos el botón de inicio
+  quizContainer.classList.remove('hide');      // Mostramos el quiz
   showQuestion();                              // Empezamos el quiz
 });
 
