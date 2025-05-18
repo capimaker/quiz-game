@@ -2,6 +2,7 @@
 *{
   box-sizing: border-box;
   margin: 50px;
+  
 }
 
 body {
@@ -9,30 +10,23 @@ body {
   justify-content: center; /* centro horizontal */
   align-items: center;     /* centro vertical */
   height: 100vh;           /* alto completo de la pantalla */
-  background-color: #cbe6f7;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: "Righteous", sans-serif;
+ 
   
 }
-
-h1{
-  align-items: center;
+body{
+  background-color:#5799c5;
 }
 
 
-/* Header superior */
 #start-screen{
    background-color: white;
   width: 600px;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 20px rgba(0,0,0,0.15);
   text-align: center;
 }
-
-
-
 
 
 #quiz-container {
@@ -40,19 +34,14 @@ h1{
   width: 600px;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 20px rgba(0,0,0,0.15);
   text-align: center;
 }
-
-
-
 
 #question {
   font-weight: bold;
   margin-bottom: 2rem;
 }
-
-
 
 #answers button {
   padding: 1rem;
@@ -62,6 +51,7 @@ h1{
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
+ 
 }
 
 #answers button:hover {
@@ -69,10 +59,22 @@ h1{
 }
 
 
-#answers button:nth-child(1) { background-color: #e74c3c; } 
-#answers button:nth-child(2) { background-color: #f1c40f; } 
-#answers button:nth-child(3) { background-color: #86dd92; } 
-#answers button:nth-child(4) { background-color: #3498db; } 
+#answers button:nth-child(1) { 
+  background-color: #e74c3c;
+   box-shadow: 0 5px 10px rgba(198, 24, 24, 0.934);
+   } 
+#answers button:nth-child(2) { 
+  background-color: #f1c40f;
+  box-shadow: 0 5px 10px rgba(219, 188, 15, 0.934);
+ } 
+#answers button:nth-child(3) {
+   background-color: #86dd92; 
+   box-shadow: 0 5px 10px rgba(72, 221, 121, 0.843);
+  } 
+#answers button:nth-child(4) { 
+  background-color: #3498db; 
+  box-shadow: 0 5px 10px rgba(52, 157, 238, 0.934);
+} 
 
 
 #nextBtn {
@@ -85,6 +87,7 @@ h1{
   grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
   gap: 1rem;                      /* separación entre botones */
   margin-bottom: 2rem;           /* espacio debajo de las respuestas */
+  
 }
 
 .hide{
