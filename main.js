@@ -2,6 +2,8 @@
 const startBtn = document.getElementById('startBtn');
 const startScreen = document.getElementById('start-screen');
 const quizContainer = document.getElementById('quiz-container');
+const questionCounter = document.getElementById("counter");
+
 
 
 startBtn.addEventListener('click', () => {
@@ -45,6 +47,9 @@ function showQuestion() {
     btn.innerHTML = decodeHTMLEntities(answer);
     btn.addEventListener('click', () => checkAnswer(btn, decodeHTMLEntities(quest.correct_answer)));
     answersDiv.appendChild(btn);
+
+  questionCounter.innerText = `${currentQuestionIndex + 1}/ ${questions.length}`;
+questionCounter.style.display = 'block';
   });
 }
 
@@ -82,9 +87,10 @@ function showFinalScore() {
   document.getElementById('answers').innerHTML = '';
   document.getElementById('nextBtn').style.display ='none';
   document.getElementById('restartBtn').classList.remove('hide');
+  questionCounter.style.display = 'none';
 }
-
-
+     
+  
 document.getElementById("restartBtn").addEventListener('click',() =>{
 currentQuestionIndex = 0;
 score = 0;
@@ -101,6 +107,7 @@ restartBtn.addEventListener('click', () => {
     .then(response => {
       questions = response.data.results;
       showQuestion();
+      
     })
     .catch(error => {
       console.error(error);

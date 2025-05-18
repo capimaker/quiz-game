@@ -1,7 +1,7 @@
 /* Fondo general */
 *{
   box-sizing: border-box;
-  margin: 50px;
+  margin: 0px;
   
 }
 
@@ -15,13 +15,18 @@ body {
   
 }
 body{
-  background-color:#5799c5;
+  
+  background-image: url("assets/hermosa-escena-de-dibujos-animados-del-paisaje-urbano-del-anime-sakura.jpg");
+  background-position: center;
+  background-size: 1920px 1080px;
 }
 
 
 #start-screen{
    background-color: white;
+   opacity: 90%;
   width: 600px;
+  
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 15px 20px rgba(0,0,0,0.15);
@@ -30,8 +35,9 @@ body{
 
 
 #quiz-container {
+  position: relative;
   background-color: white;
-  width: 600px;
+  width: 700px;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 15px 20px rgba(0,0,0,0.15);
@@ -96,4 +102,12 @@ body{
 
 .incorrect {
   display: none;
+}
+
+#counter{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
+  
 }
