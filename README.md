@@ -17,6 +17,12 @@ Gestión del proyecto con Github.
 Código limpio, buenas prácticas.
 Readme con explicación del proyecto.
 
+Tecnologías Utilizadas:
+* Html
+* Css
+* JavaScript
+
+
 
 Instalación:
 
@@ -26,6 +32,8 @@ como vamos a usar Axios deberemos enlazarlo en html al final de nuestro codigo c
 también usaremos algo de Bootstrap con lo que deberemos asegurarnos de enlazarlo dentro del head:
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+
 
 
 Instrucciones del QUIZ:

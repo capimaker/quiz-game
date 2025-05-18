@@ -1,19 +1,9 @@
 
+const API_URL = "https://opentdb.com/api.php?amount=10&type=multiple"
 const startBtn = document.getElementById('startBtn');
 const startScreen = document.getElementById('start-screen');
 const quizContainer = document.getElementById('quiz-container');
 const questionCounter = document.getElementById("counter");
-
-
-
-startBtn.addEventListener('click', () => {
-  startScreen.classList.add('hide');         // Ocultamos el botón de inicio
-  quizContainer.classList.remove('hide');      // Mostramos el quiz
-  showQuestion();                              // Empezamos el quiz
-});
-
-
-
 
 /* vamos a empezar creando variables donde en la primera guardaremos las 10 preguntas
 en la segunda variable le diremos que empezamos desde la posición 0
@@ -22,16 +12,28 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
+
+startBtn.addEventListener('click', async () => {
+  startScreen.classList.add('hide');         // Ocultamos el botón de inicio
+  quizContainer.classList.remove('hide');
+  await loadQuestions()      // Mostramos el quiz
+  showQuestion();                              // Empezamos el quiz
+});
+
+
 /* aquí llamamos a la API y le decimos que then si la respuesta es correcta response.data.results es donde estan las preguntas
 y las guarda en question. luego llamaremos a showQuestion para mostrar la primera pregunta. si hay un error pasaremos al catch*/ 
-axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
-  .then(response => {
-    questions = response.data.results;
-     
-  })
-  .catch(error => {
+ 
+const loadQuestions = async () =>{
+  try{
+const res = await axios.get(API_URL);
+questions = res.data.results;
+currentQuestionIndex = 0;
+score = 0;
+  } catch(error){
     console.error(error);
-  });
+  }
+};
 /*hacemos la funcion de showQuestion y obtenemos la pregunta actual, por ejemplo, la pregunta 1 si currentQuestionIndex es 0.*/ 
 function showQuestion() {
   const quest = questions[currentQuestionIndex]; 
