@@ -42,8 +42,8 @@ score = 0;
 /*hacemos la funcion de showQuestion y obtenemos la pregunta actual, por ejemplo, la pregunta 1 si currentQuestionIndex es 0.*/ 
 const showQuestion = () => {
   const quest = questions[currentQuestionIndex]; 
-  const answers = [...quest.incorrect_answers];// aquí hacemos un array con la copia de las respuestas incorrectas
-  answers.splice(Math.floor(Math.random() * 4), 0, quest.correct_answer); // aquí lo separamos y le decimos hey meteme la respuesta dentro de 4 posibles de manera random 
+   const answers = [...quest.incorrect_answers, quest.correct_answer];
+  answers.sort(() => Math.random() - 0.5); // Mezclamos aleatoriamente las respuestas
 
   questionEl.innerHTML = decodeHTMLEntities(quest.question);
   answersDiv.innerHTML = '';

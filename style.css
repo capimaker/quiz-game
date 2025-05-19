@@ -21,11 +21,17 @@ body{
   background-size: 1920px 1080px;
 }
 
+h1{
+  padding: 10px;
+  
+  font-weight: bold;
+}
 
 #start-screen{
    background-color: white;
    opacity: 90%;
   width: 600px;
+  height: 200px;
   
   padding: 2rem;
   border-radius: 12px;
