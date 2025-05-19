@@ -43,7 +43,8 @@ score = 0;
 const showQuestion = () => {
   const quest = questions[currentQuestionIndex]; 
    const answers = [...quest.incorrect_answers, quest.correct_answer];
-  answers.sort(() => Math.random() - 0.5); // Mezclamos aleatoriamente las respuestas
+  // Mezclamos aleatoriamente las respuestas
+  answers.sort(() => Math.random() - 0.5);
 
   questionEl.innerHTML = decodeHTMLEntities(quest.question);
   answersDiv.innerHTML = '';
@@ -59,26 +60,31 @@ const showQuestion = () => {
 questionCounter.style.display = 'block';
   });
 }
-// Aquí voy a verificar la respuesta del jugador
 const checkAnswer = (button, correctAnswer) => {
   const buttons = document.querySelectorAll('#answers button');
-  
+  const userAnswer = decodeHTMLEntities(button.innerHTML);
 
   buttons.forEach(btn => {
     btn.disabled = true;
-    const btnText = decodeHTMLEntities(btn.innerHTML); // esto es clave
+    const btnText = decodeHTMLEntities(btn.innerHTML);
 
     if (btnText === correctAnswer) {
       btn.classList.add('correct');
-      if (btn === button) score++;
-    } else {
+      btn.style.display = 'inline-block';  // Mostramos la correcta
+    } else if (btnText === userAnswer) {
       btn.classList.add('incorrect');
-    }
+      btn.style.display = 'inline-block';  // Mostramos la que seleccionó el usuario (aunque sea incorrecta)
+   /* } else {
+      btn.style.display = 'none';  // Ocultamos las demás respuestas
+    }*/
   });
+
+  if (userAnswer === correctAnswer) {
+    score++;
+  }
 
   nextBtn.style.display = 'block';
 };
-
 
 nextBtn.addEventListener('click', () => {
   currentQuestionIndex++;

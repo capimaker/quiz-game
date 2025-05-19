@@ -71,21 +71,47 @@ h1{
 }
 
 
-#answers button:nth-child(1) { 
-  background-color: #e74c3c;
+#answers button:nth-child(1){ 
+  color: #e74c3c;
+  border-color: #e74c3c;
+  border-style: groove;
    box-shadow: 0 5px 10px rgba(198, 24, 24, 0.934);
    } 
 #answers button:nth-child(2) { 
-  background-color: #f1c40f;
+  color: #f1c40f;
+  border-color: #f1c40f;
+  border-style: groove;
   box-shadow: 0 5px 10px rgba(219, 188, 15, 0.934);
  } 
 #answers button:nth-child(3) {
-   background-color: #86dd92; 
+   color: #86dd92; 
+   border-color: #86dd92;
+   border-style: groove;
    box-shadow: 0 5px 10px rgba(72, 221, 121, 0.843);
   } 
 #answers button:nth-child(4) { 
-  background-color: #3498db; 
+  color: #3498db; 
+  border-color:#3498db ;
+  border-style: groove;
   box-shadow: 0 5px 10px rgba(52, 157, 238, 0.934);
+} 
+
+#answers button:nth-child(1):hover{ 
+background-color: #e74c3c ;
+color: #ffff;
+}
+#answers button:nth-child(2):hover { 
+  background-color: #f1c40f;
+  color: #ffff;
+ } 
+
+ #answers button:nth-child(3):hover {
+   background-color: #86dd92; 
+   color: #ffff;
+  } 
+  #answers button:nth-child(4):hover { 
+  background-color: #3498db; 
+  color: #ffff;
 } 
 
 
@@ -106,8 +132,15 @@ h1{
     display: none;
 }
 
+.correct{
+  background-color: #86dd92 !important;
+  color: #ffff !important;
+  box-shadow: 0 5px 10px rgba(72, 221, 121, 0.843);
+}
 .incorrect {
-  display: none;
+ background-color:#ff0000 !important;
+ color: #ffff !important;
+ box-shadow: 0 5px 10px rgba(198, 24, 24, 0.934) !important;
 }
 
 #counter{
@@ -117,3 +150,4 @@ h1{
   font-weight: bold;
   
 }
+

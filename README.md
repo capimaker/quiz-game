@@ -44,5 +44,18 @@ al pulsar cualquier respuesta, tanto si aciertas o fallas, se ocultan el resto d
 Entonces aparece el botón de Next para pasar a la siguiente pregunta.
 Hay 10 preguntas en total, totalmente aleatorias, cuando llegamos a la última aparecerá nuestra puntuación y un botón de reset para volver a empezar el juego.
 
-CODIGO
+CODIGO:
+
+He hecho una comparativa consultando la diferencia en chati,
+en la línea 46 antes tenia puesto un splice.Math.floor(Math.random() * 4);
+que he sustituido por un sort(() => Math.random() - 0.5);
+
+✅ Usa splice si:
+Quieres insertar la respuesta correcta en una posición aleatoria sin reordenar las demás.
+Buscas una mezcla más controlada y específica.
+Te interesa más la lógica de "aquí la inserto y no toco el orden del resto".
+✅ Usa sort si:
+Quieres mezclar TODAS las respuestas de forma aleatoria.
+No te importa dónde cae la correcta mientras esté mezclada con las otras.
+Quieres menos líneas de código y más simplicidad.
 
