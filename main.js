@@ -74,7 +74,7 @@ const checkAnswer = (button, correctAnswer) => {
     } else if (btnText === userAnswer) {
       btn.classList.add('incorrect');
       btn.style.display = 'inline-block';  // Mostramos la que seleccionó el usuario (aunque sea incorrecta)
-   /* } else {
+   } /*else {
       btn.style.display = 'none';  // Ocultamos las demás respuestas
     }*/
   });
