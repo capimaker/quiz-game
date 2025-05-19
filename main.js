@@ -74,9 +74,11 @@ const checkAnswer = (button, correctAnswer) => {
     } else if (btnText === userAnswer) {
       btn.classList.add('incorrect');
       btn.style.display = 'inline-block';  // Mostramos la que seleccionó el usuario (aunque sea incorrecta)
-   } /*else {
-      btn.style.display = 'none';  // Ocultamos las demás respuestas
-    }*/
+   } else {
+    btn.classList.add('disabled-option');
+      btn.style.opacity= '0.5';  // damos opacidad las demás respuestas
+      btn.style.pointerEvents = 'none' ;
+    }
   });
 
   if (userAnswer === correctAnswer) {
