@@ -16,7 +16,7 @@ body {
 }
 body{
   
-  background-image: url("assets/hermosa-escena-de-dibujos-animados-del-paisaje-urbano-del-anime-sakura.jpg");
+  background-image: url("./assets/sakura.jpg");
   background-position: center;
   background-size: 1920px 1080px;
 }
